@@ -19,11 +19,11 @@
 - Jasmine/Karma
 
 ### How to run the application
-cd pet-store/src/main/resources/public/
-bower install
-cd ../../../..
-maven package
-cd target/
-java -jar pet-store-0.0.1-SNAPSHOT.jar
+- cd pet-store/src/main/resources/public/
+- bower install
+- cd ../../../..
+- maven package
+- cd target/
+- java -jar pet-store-0.0.1-SNAPSHOT.jar
 
 Then access via http://localhost:8080/app/index.html
