@@ -1,0 +1,38 @@
+<div id="PetPage" ng-init="init()">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Pet Store</a>
+            </div>
+            <div id="navbar">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group" ng-show="hasPermission('READ')">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="query"
+                               ng-model-options="{ debounce: 300 }">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="add()" ng-if="hasPermission('CREATE')">
+                        Add pet
+                    </button>
+                    <button type="submit" class="btn btn-default" ng-click="logout()" ng-if="signedIn()">
+                        Sign Out
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div ng-repeat="pet in pets" class="thumbnail col-xs-18 col-sm-6 col-md-3">
+            <img class="img-thumbnail img-rounded center-block"
+                 src="/pet-images/{{pet.photoUrls[0]}}">
+            <div class="caption center-block">
+                <h3>{{pet.name}}</h3>
+                <h5>{{pet.category.name}}</h5>
+            </div>
+            <a href="" class="btn btn-default btn-xs pull-right" role="button" ng-click="deletePet(pet)"
+               ng-if="hasPermission('DELETE')">
+                <i class="glyphicon glyphicon-remove"></i>
+            </a>
+        </div>
+    </div>
+</div>
