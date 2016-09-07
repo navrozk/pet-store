@@ -22,7 +22,7 @@
 - cd pet-store/src/main/resources/public/
 - bower install
 - cd ../../../..
-- maven package
+- mvn package
 - cd target/
 - java -jar pet-store-0.0.1-SNAPSHOT.jar
 
