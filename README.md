@@ -27,3 +27,7 @@
 - java -jar pet-store-0.0.1-SNAPSHOT.jar
 
 Then access via http://localhost:8080/app/index.html
+
+### Credentials (hardcoded in spring security config for demo)
+- Readonly user (Search by petId, view): userid: userA, password: userA
+- Admin user (Search by petId, view, add, delete): userid: userB, password: userB
